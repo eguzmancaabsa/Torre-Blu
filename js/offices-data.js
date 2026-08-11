@@ -49,18 +49,26 @@ const amenitiesData = [
    ------------------------------------------------------------------------- */
 const officesData = [
   {
-    id: "ejemplo-01",
-    piso: "Piso 8 (EJEMPLO)",
-    superficie: 180,
+    id: "piso-8",
+    piso: "Piso 8",
+    superficie: 180, // TODO: confirmar superficie real
     precioM2: 22,
-    estado: "Acondicionada",
+    estado: "Acondicionada", // TODO: confirmar estado real
     amueblada: true,
-    caracteristicas: ["Sala de juntas", "Recepción", "Cubículos", "Vista panorámica"],
+    caracteristicas: ["Sala de juntas", "Recepción", "Cubículos", "Vista panorámica"], // TODO: confirmar características reales
     fotos: [
-      "assets/images/oficinas/ejemplo-01-a.jpg",
-      "assets/images/oficinas/ejemplo-01-b.jpg"
+      "assets/images/oficinas/piso-8-01.jpg",
+      "assets/images/oficinas/piso-8-02.jpg",
+      "assets/images/oficinas/piso-8-03.jpg",
+      "assets/images/oficinas/piso-8-04.jpg",
+      "assets/images/oficinas/piso-8-05.jpg",
+      "assets/images/oficinas/piso-8-06.jpg",
+      "assets/images/oficinas/piso-8-07.jpg",
+      "assets/images/oficinas/piso-8-08.jpg",
+      "assets/images/oficinas/piso-8-09.jpg",
+      "assets/images/oficinas/piso-8-10.jpg"
     ],
-    plano: "assets/images/planos/ejemplo-01-plano.jpg",
+    plano: "assets/images/planos/piso-8-plano.jpg", // TODO: cargar plano real
     destacada: true
   },
   {
