@@ -113,7 +113,7 @@ const galleryData = [
    DATOS DE CONTACTO
    ------------------------------------------------------------------------- */
 const contactData = {
-  telefono: "",   // Ej. "+52 55 0000 0000"
-  email: "",      // Ej. "contacto@torreblu.mx"
-  whatsapp: "5215500000000" // Solo dígitos, con código de país. Actualiza en index.html también.
+  telefono: "+52 55 4464 7595",
+  email: "imagen@ancore.mx",
+  whatsapp: "525544647595" // Solo dígitos, con código de país. Actualiza en index.html también.
 };
