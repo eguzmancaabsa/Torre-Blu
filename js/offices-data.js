@@ -53,7 +53,7 @@ const officesData = [
     piso: "Piso 8 (Con terraza)",
     superficie: 1248,
     precioM2: 22,
-    estado: "Acondicionada", // TODO: confirmar estado real
+    estado: "Acondicionada",
     amueblada: true,
     caracteristicas: ["55 m² de terraza", "Aire acondicionado", "41 cajones de estacionamiento", "Mantenimiento $90 MXN/m²/mes", "Vista panorámica"],
     fotos: [
