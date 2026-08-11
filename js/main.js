@@ -120,33 +120,78 @@ const amenityIcons = {
 /* -------------------------------------------------------------------------
    Render: Oficinas disponibles
    ------------------------------------------------------------------------- */
-function formatMXN(n) {
-  return n.toLocaleString("es-MX", { maximumFractionDigits: 0 });
+function renderOfficeCarousel(office) {
+  const fotos = office.fotos && office.fotos.length ? office.fotos : [""];
+  const hasMultiple = fotos.length > 1;
+
+  const slides = fotos.map(src => `
+    <div class="carousel-slide">
+      <img src="${src}" alt="Oficina en renta, ${office.piso}, Torre Blu"
+           onerror="handleImgFallback(this, '${office.piso.replace(/'/g, "")}')" loading="lazy">
+    </div>
+  `).join("");
+
+  const arrows = hasMultiple ? `
+    <button type="button" class="carousel-arrow carousel-prev" aria-label="Foto anterior">&#8249;</button>
+    <button type="button" class="carousel-arrow carousel-next" aria-label="Foto siguiente">&#8250;</button>
+  ` : "";
+
+  const dots = hasMultiple ? `
+    <div class="carousel-dots">
+      ${fotos.map((_, i) => `<button type="button" class="carousel-dot${i === 0 ? " is-active" : ""}" data-index="${i}" aria-label="Ir a foto ${i + 1}"></button>`).join("")}
+    </div>
+  ` : "";
+
+  return `
+    <div class="office-photo" data-carousel>
+      ${office.destacada ? '<span class="office-badge">Destacada</span>' : ""}
+      <span class="office-status">${office.estado}</span>
+      <div class="carousel-track">${slides}</div>
+      ${arrows}
+      ${dots}
+    </div>
+  `;
+}
+
+function initOfficeCarousels(scope) {
+  scope.querySelectorAll("[data-carousel]").forEach(carousel => {
+    const track = carousel.querySelector(".carousel-track");
+    const slideCount = carousel.querySelectorAll(".carousel-slide").length;
+    const prevBtn = carousel.querySelector(".carousel-prev");
+    const nextBtn = carousel.querySelector(".carousel-next");
+    const dots = carousel.querySelectorAll(".carousel-dot");
+    let index = 0;
+
+    function update() {
+      track.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach((dot, i) => dot.classList.toggle("is-active", i === index));
+    }
+    function goTo(i) {
+      index = (i + slideCount) % slideCount;
+      update();
+    }
+
+    prevBtn?.addEventListener("click", (e) => { e.stopPropagation(); goTo(index - 1); });
+    nextBtn?.addEventListener("click", (e) => { e.stopPropagation(); goTo(index + 1); });
+    dots.forEach((dot, i) => dot.addEventListener("click", (e) => { e.stopPropagation(); goTo(i); }));
+  });
 }
 
 (function renderOffices() {
   const grid = document.getElementById("oficinasGrid");
   if (!grid || typeof officesData === "undefined") return;
 
-  grid.innerHTML = officesData.map(office => {
-    const mensual = office.superficie * office.precioM2;
-    const cover = office.fotos && office.fotos[0] ? office.fotos[0] : "";
-    return `
+  grid.innerHTML = officesData.map(office => `
       <article class="office-card" data-office-id="${office.id}">
-        <div class="office-photo">
-          ${office.destacada ? '<span class="office-badge">Destacada</span>' : ""}
-          <span class="office-status">${office.estado}</span>
-          <img src="${cover}" alt="Oficina en renta, ${office.piso}, Torre Blu"
-               onerror="handleImgFallback(this, '${office.piso.replace(/'/g, "")}')" loading="lazy">
-        </div>
+        ${renderOfficeCarousel(office)}
         <div class="office-body">
           <div class="office-title-row">
             <h3>${office.piso}</h3>
             <span class="office-surface">${office.superficie} m²</span>
           </div>
           <div class="office-price">
-            <span class="price-m2">USD $${office.precioM2}/m²/mes</span>
-            <span class="price-total">$${formatMXN(mensual)} <small>USD/mes</small></span>
+            <span class="price-value">USD $${office.precioM2}</span>
+            <span class="price-unit">/ m² / mes</span>
           </div>
           <div class="office-features">
             ${office.caracteristicas.map(f => `<span>${f}</span>`).join("")}
@@ -156,8 +201,9 @@ function formatMXN(n) {
           </div>
         </div>
       </article>
-    `;
-  }).join("");
+    `).join("");
+
+  initOfficeCarousels(grid);
 
   grid.querySelectorAll("[data-open-office]").forEach(btn => {
     btn.addEventListener("click", () => openOfficeModal(btn.getAttribute("data-open-office")));
@@ -173,7 +219,6 @@ function openOfficeModal(officeId) {
 
   const modal = document.getElementById("officeModal");
   const body = document.getElementById("modalBody");
-  const mensual = office.superficie * office.precioM2;
   const cover = office.fotos && office.fotos[0] ? office.fotos[0] : "";
 
   body.innerHTML = `
@@ -185,8 +230,8 @@ function openOfficeModal(officeId) {
       <p class="eyebrow" style="margin-bottom:0;">${office.estado}</p>
       <h3 id="modalTitle">${office.piso}</h3>
       <div class="office-price">
-        <span class="price-m2">USD $${office.precioM2}/m²/mes</span>
-        <span class="price-total">$${formatMXN(mensual)} <small>USD/mes</small></span>
+        <span class="price-value">USD $${office.precioM2}</span>
+        <span class="price-unit">/ m² / mes</span>
       </div>
       <p class="section-lead" style="font-size:0.95rem;">
         Superficie: <strong>${office.superficie} m²</strong> · ${office.amueblada ? "Se conserva mobiliario y distribución actual, o se entrega en planta libre." : "Se entrega en planta libre."}

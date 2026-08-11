@@ -355,8 +355,61 @@ button { font-family: inherit; cursor: pointer; }
   overflow: hidden;
   background: var(--c-gray-100);
 }
-.office-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
-.office-card:hover .office-photo img { transform: scale(1.05); }
+
+.carousel-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform .5s var(--ease);
+}
+.carousel-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+}
+.carousel-slide img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s var(--ease); }
+.office-card:hover .carousel-slide img { transform: scale(1.04); }
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px; height: 34px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(10,10,10,0.4);
+  color: var(--c-white);
+  font-size: 1.3rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity .3s var(--ease), background-color .3s var(--ease);
+  z-index: 2;
+}
+.office-photo:hover .carousel-arrow { opacity: 1; }
+.carousel-arrow:hover { background: rgba(10,10,10,0.7); }
+.carousel-prev { left: 12px; }
+.carousel-next { right: 12px; }
+
+.carousel-dots {
+  position: absolute;
+  left: 0; right: 0; bottom: 14px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  z-index: 2;
+}
+.carousel-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background: rgba(255,255,255,0.55);
+  transition: background-color .3s var(--ease), width .3s var(--ease);
+}
+.carousel-dot.is-active { background: var(--c-white); width: 18px; border-radius: 3px; }
 
 .office-badge {
   position: absolute;
@@ -394,9 +447,8 @@ button { font-family: inherit; cursor: pointer; }
   border-top: 1px solid var(--c-gray-100);
   border-bottom: 1px solid var(--c-gray-100);
 }
-.office-price .price-m2 { font-size: 0.85rem; color: var(--c-gray-500); }
-.office-price .price-total { font-size: 1.4rem; font-weight: 800; }
-.office-price .price-total small { font-size: 0.75rem; font-weight: 500; color: var(--c-gray-500); }
+.office-price .price-value { font-size: 1.4rem; font-weight: 800; }
+.office-price .price-unit { font-size: 0.85rem; color: var(--c-gray-500); }
 
 .office-features { display: flex; flex-wrap: wrap; gap: 8px; }
 .office-features span {
