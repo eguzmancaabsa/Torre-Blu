@@ -6,10 +6,17 @@ elegante en su lugar (no se rompe ningún diseño).
 
 ## Video del Hero
 
-| Archivo esperado | Recomendaciones |
+✅ Ya cargado. El video aéreo (dron) de Torre Blu está en su lugar y sirve
+como fondo del Hero, con una versión ligera adicional para móvil.
+
+| Archivo | Descripción |
 |---|---|
-| `assets/video/torre-blu-drone.mp4` | Video de dron de Torre Blu. MP4 (H.264), 1920×1080 o superior, 10–20s, en loop, **sin audio**. Comprimir a &lt;15MB idealmente. |
-| `assets/images/hero/hero-poster.jpg` | Imagen fija (poster) que se muestra mientras el video carga. |
+| `assets/video/torre-blu-drone.mp4` | Versión desktop. H.264, 1920×1080, ~6.8MB, sin audio, faststart. |
+| `assets/video/torre-blu-drone-mobile.mp4` | Versión móvil (servida en pantallas ≤760px vía `<source media>`). H.264, 960×540, ~2.7MB, sin audio. |
+| `assets/images/hero/hero-poster.jpg` | Poster (frame fijo del video) que se muestra mientras carga. |
+
+Para reemplazar el video en el futuro, sustituye ambos archivos MP4 conservando
+los mismos nombres y regenera el poster con un frame representativo.
 
 ## Torre Blu
 
