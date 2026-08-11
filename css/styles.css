@@ -306,11 +306,9 @@ button { font-family: inherit; cursor: pointer; }
 .torre { background: var(--c-white); }
 .torre-media {
   width: 100%;
-  height: clamp(320px, 42vw, 560px);
-  overflow: hidden;
   margin-bottom: 80px;
 }
-.torre-media img { width: 100%; height: 100%; object-fit: cover; }
+.torre-media img { width: 100%; height: auto; display: block; }
 
 .amenities-grid {
   display: grid;
