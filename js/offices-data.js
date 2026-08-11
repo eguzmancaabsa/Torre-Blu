@@ -50,12 +50,12 @@ const amenitiesData = [
 const officesData = [
   {
     id: "piso-8",
-    piso: "Piso 8",
-    superficie: 180, // TODO: confirmar superficie real
+    piso: "Piso 8 (Con terraza)",
+    superficie: 1248,
     precioM2: 22,
     estado: "Acondicionada", // TODO: confirmar estado real
     amueblada: true,
-    caracteristicas: ["Sala de juntas", "Recepción", "Cubículos", "Vista panorámica"], // TODO: confirmar características reales
+    caracteristicas: ["55 m² de terraza", "Aire acondicionado", "41 cajones de estacionamiento", "Mantenimiento $90 MXN/m²/mes", "Vista panorámica"],
     fotos: [
       "assets/images/oficinas/piso-8-01.jpg",
       "assets/images/oficinas/piso-8-02.jpg",
