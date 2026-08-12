@@ -40,8 +40,8 @@ const amenitiesData = [
    - piso          : piso del edificio, ej. "Piso 8".
    - superficie    : superficie rentable en m², solo número.
    - precioM2      : precio por m² en USD/mes (por defecto 22 para todas).
-   - estado        : "Acondicionada" | "Planta libre" | "Próximamente", etc.
-   - amueblada     : true/false — conserva mobiliario actual.
+   - estado        : únicamente uno de estos tres valores exactos —
+                      "Acondicionada con muebles" | "Acondicionada sin muebles" | "Planta libre".
    - caracteristicas: arreglo de textos cortos (features de esa oficina).
    - fotos         : arreglo de rutas de imagen (assets/images/oficinas/...).
    - plano         : ruta de imagen del plano (assets/images/planos/...).
@@ -53,8 +53,7 @@ const officesData = [
     piso: "Piso 8 (Con terraza)",
     superficie: 1248,
     precioM2: 22,
-    estado: "Acondicionada",
-    amueblada: true,
+    estado: "Acondicionada con muebles",
     caracteristicas: ["55 m² de terraza", "Aire acondicionado", "41 cajones de estacionamiento", "Mantenimiento $90 MXN/m²/mes", "Vista panorámica"],
     fotos: [
       "assets/images/oficinas/piso-8-01.jpg",
@@ -76,8 +75,7 @@ const officesData = [
     piso: "Piso 9",
     superficie: 1248,
     precioM2: 22,
-    estado: "Acondicionada",
-    amueblada: true,
+    estado: "Acondicionada con muebles",
     caracteristicas: ["Aire acondicionado", "41 cajones de estacionamiento", "Mantenimiento $90 MXN/m²/mes", "Vista panorámica"],
     fotos: [
       "assets/images/oficinas/piso-9-01.jpg",
@@ -99,8 +97,7 @@ const officesData = [
     piso: "Piso 11",
     superficie: 1248,
     precioM2: 22,
-    estado: "Acondicionada",
-    amueblada: true,
+    estado: "Acondicionada con muebles",
     caracteristicas: ["Aire acondicionado", "41 cajones de estacionamiento", "Mantenimiento $90 MXN/m²/mes", "Vista panorámica"],
     fotos: [
       "assets/images/oficinas/piso-11-01.jpg",
@@ -123,7 +120,6 @@ const officesData = [
     superficie: 131.49,
     precioM2: 22,
     estado: "Planta libre",
-    amueblada: false,
     caracteristicas: ["Aire acondicionado", "4 cajones de estacionamiento", "Mantenimiento $90 MXN/m²/mes", "Vista panorámica"],
     fotos: [
       "assets/images/oficinas/piso-12-7-1-01.jpg",
@@ -141,8 +137,7 @@ const officesData = [
     piso: "Piso 12 (7.2)",
     superficie: 271.56,
     precioM2: 22,
-    estado: "Planta libre",
-    amueblada: false,
+    estado: "Acondicionada sin muebles",
     caracteristicas: ["Aire acondicionado", "9 cajones de estacionamiento", "Mantenimiento $90 MXN/m²/mes", "Vista panorámica"],
     fotos: [
       "assets/images/oficinas/piso-12-7-2-01.jpg",
@@ -158,8 +153,7 @@ const officesData = [
     piso: "Piso 13",
     superficie: 1248,
     precioM2: 22,
-    estado: "Acondicionada / Sin Muebles",
-    amueblada: false,
+    estado: "Acondicionada sin muebles",
     caracteristicas: ["Aire acondicionado", "41 cajones de estacionamiento", "Mantenimiento $90 MXN/m²/mes", "Vista panorámica"],
     fotos: [
       "assets/images/oficinas/piso-13-01.jpg",
@@ -176,12 +170,29 @@ const officesData = [
     destacada: false
   },
   {
+    id: "piso-14",
+    piso: "Piso 14 (Con terraza)",
+    superficie: 1248,
+    precioM2: 22,
+    estado: "Acondicionada con muebles",
+    caracteristicas: ["55 m² de terraza", "Aire acondicionado", "41 cajones de estacionamiento", "Mantenimiento $90 MXN/m²/mes", "Vista panorámica"],
+    fotos: [
+      "assets/images/oficinas/piso-14-01.jpg",
+      "assets/images/oficinas/piso-14-02.jpg",
+      "assets/images/oficinas/piso-14-03.jpg",
+      "assets/images/oficinas/piso-14-04.jpg",
+      "assets/images/oficinas/piso-14-05.jpg",
+      "assets/images/oficinas/piso-14-06.jpg"
+    ],
+    plano: "assets/images/planos/piso-14-plano.jpg", // TODO: cargar plano real
+    destacada: false
+  },
+  {
     id: "ejemplo-03",
     piso: "Piso 15 (EJEMPLO)",
     superficie: 95,
     precioM2: 22,
-    estado: "Acondicionada",
-    amueblada: true,
+    estado: "Acondicionada con muebles",
     caracteristicas: ["Oficina privada", "Sala de espera", "Cocineta"],
     fotos: [
       "assets/images/oficinas/ejemplo-03-a.jpg"
