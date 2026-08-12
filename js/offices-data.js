@@ -191,13 +191,13 @@ const officesData = [
    ------------------------------------------------------------------------- */
 const galleryData = [
   { src: "assets/images/galeria/fachada-01.jpg", categoria: "Fachada" },
-  { src: "assets/images/galeria/lobby-01.jpg", categoria: "Lobby" },
-  { src: "assets/images/galeria/motor-lobby-01.jpg", categoria: "Motor Lobby" },
-  { src: "assets/images/galeria/oficina-01.jpg", categoria: "Oficinas" },
-  { src: "assets/images/galeria/vista-01.jpg", categoria: "Vistas" },
-  { src: "assets/images/galeria/areas-comunes-01.jpg", categoria: "Áreas comunes" },
   { src: "assets/images/galeria/fachada-02.jpg", categoria: "Fachada" },
-  { src: "assets/images/galeria/oficina-02.jpg", categoria: "Oficinas" }
+  { src: "assets/images/galeria/lobby-01.jpg", categoria: "Lobby" },
+  { src: "assets/images/galeria/lobby-02.jpg", categoria: "Lobby" },
+  { src: "assets/images/galeria/lobby-03.jpg", categoria: "Lobby" },
+  { src: "assets/images/galeria/motor-lobby-01.jpg", categoria: "Motor Lobby" },
+  { src: "assets/images/galeria/vista-01.jpg", categoria: "Vistas" },
+  { src: "assets/images/galeria/vista-02.jpg", categoria: "Vistas" }
 ];
 
 /* -------------------------------------------------------------------------
