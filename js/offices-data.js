@@ -137,6 +137,23 @@ const officesData = [
     destacada: false
   },
   {
+    id: "piso-12-7-2",
+    piso: "Piso 12 (7.2)",
+    superficie: 271.56,
+    precioM2: 22,
+    estado: "Planta libre",
+    amueblada: false,
+    caracteristicas: ["Aire acondicionado", "9 cajones de estacionamiento", "Mantenimiento $90 MXN/m²/mes", "Vista panorámica"],
+    fotos: [
+      "assets/images/oficinas/piso-12-7-2-01.jpg",
+      "assets/images/oficinas/piso-12-7-2-02.jpg",
+      "assets/images/oficinas/piso-12-7-2-03.jpg",
+      "assets/images/oficinas/piso-12-7-2-04.jpg"
+    ],
+    plano: "assets/images/planos/piso-12-7-2-plano.jpg", // TODO: cargar plano real
+    destacada: false
+  },
+  {
     id: "ejemplo-03",
     piso: "Piso 15 (EJEMPLO)",
     superficie: 95,
