@@ -72,6 +72,29 @@ const officesData = [
     destacada: true
   },
   {
+    id: "piso-9",
+    piso: "Piso 9",
+    superficie: 1248,
+    precioM2: 22,
+    estado: "Acondicionada",
+    amueblada: true,
+    caracteristicas: ["Aire acondicionado", "41 cajones de estacionamiento", "Mantenimiento $90 MXN/m²/mes", "Vista panorámica"],
+    fotos: [
+      "assets/images/oficinas/piso-9-01.jpg",
+      "assets/images/oficinas/piso-9-02.jpg",
+      "assets/images/oficinas/piso-9-03.jpg",
+      "assets/images/oficinas/piso-9-04.jpg",
+      "assets/images/oficinas/piso-9-05.jpg",
+      "assets/images/oficinas/piso-9-06.jpg",
+      "assets/images/oficinas/piso-9-07.jpg",
+      "assets/images/oficinas/piso-9-08.jpg",
+      "assets/images/oficinas/piso-9-09.jpg",
+      "assets/images/oficinas/piso-9-10.jpg"
+    ],
+    plano: "assets/images/planos/piso-9-plano.jpg", // TODO: cargar plano real
+    destacada: false
+  },
+  {
     id: "ejemplo-02",
     piso: "Piso 12 (EJEMPLO)",
     superficie: 260,
