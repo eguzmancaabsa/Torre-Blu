@@ -124,12 +124,16 @@ function renderOfficeCarousel(office) {
   const fotos = office.fotos && office.fotos.length ? office.fotos : [""];
   const hasMultiple = fotos.length > 1;
 
-  const slides = fotos.map(src => `
-    <div class="carousel-slide">
-      <img src="${src}" alt="Oficina en renta, ${office.piso}, Torre Blu"
+  const slides = fotos.map(src => {
+    const isPlan = office.plano && src === office.plano;
+    const alt = isPlan ? `Plano de la oficina, ${office.piso}, Torre Blu` : `Oficina en renta, ${office.piso}, Torre Blu`;
+    return `
+    <div class="carousel-slide${isPlan ? " carousel-slide--plan" : ""}">
+      <img src="${src}" alt="${alt}"
            onerror="handleImgFallback(this, '${office.piso.replace(/'/g, "")}')" loading="lazy">
     </div>
-  `).join("");
+  `;
+  }).join("");
 
   const arrows = hasMultiple ? `
     <button type="button" class="carousel-arrow carousel-prev" aria-label="Foto anterior">&#8249;</button>

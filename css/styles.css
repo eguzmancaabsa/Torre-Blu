@@ -370,6 +370,10 @@ button { font-family: inherit; cursor: pointer; }
 .carousel-slide img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .6s var(--ease); }
 .office-card:hover .carousel-slide img { transform: scale(1.04); }
 
+.carousel-slide--plan { background: var(--c-white); }
+.carousel-slide--plan img { object-fit: contain; }
+.office-card:hover .carousel-slide--plan img { transform: none; }
+
 .carousel-arrow {
   position: absolute;
   top: 50%;
