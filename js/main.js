@@ -234,7 +234,7 @@ function openOfficeModal(officeId) {
         <span class="price-unit">/ m² / mes</span>
       </div>
       <p class="section-lead" style="font-size:0.95rem;">
-        Superficie: <strong>${office.superficie} m²</strong> · ${office.amueblada ? "Se conserva mobiliario y distribución actual, o se entrega en planta libre." : "Se entrega en planta libre."}
+        Superficie: <strong>${office.superficie} m²</strong> · ${office.amueblada ? "Se conserva mobiliario y distribución actual." : office.estado === "Planta libre" ? "Se entrega en planta libre." : "Se entrega acondicionada, sin mobiliario."}
       </p>
       <div class="office-features">
         ${office.caracteristicas.map(f => `<span>${f}</span>`).join("")}
