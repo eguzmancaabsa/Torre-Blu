@@ -194,7 +194,9 @@ const officesData = [
 /* -------------------------------------------------------------------------
    GALERÍA
    Agrega o quita imágenes de este arreglo para actualizar la sección
-   "Galería". `categoria` se usa solo como etiqueta visible.
+   "Galería". `categoria` se usa solo como etiqueta visible. Marca
+   `esPlano: true` en planos u otras imágenes que no deban recortarse
+   (se muestran completas en vez de rellenar el marco cuadrado).
    ------------------------------------------------------------------------- */
 const galleryData = [
   { src: "assets/images/galeria/fachada-01.jpg", categoria: "Fachada" },
@@ -204,7 +206,11 @@ const galleryData = [
   { src: "assets/images/galeria/lobby-03.jpg", categoria: "Lobby" },
   { src: "assets/images/galeria/motor-lobby-01.jpg", categoria: "Motor Lobby" },
   { src: "assets/images/galeria/vista-01.jpg", categoria: "Vistas" },
-  { src: "assets/images/galeria/vista-02.jpg", categoria: "Vistas" }
+  { src: "assets/images/galeria/vista-02.jpg", categoria: "Vistas" },
+  { src: "assets/images/planos/piso-8-14-plano.jpg", categoria: "Plano Piso 8 y 14", esPlano: true },
+  { src: "assets/images/planos/piso-9-11-13-plano.jpg", categoria: "Plano Piso 9, 11 y 13", esPlano: true },
+  { src: "assets/images/planos/piso-12-7-1-plano.jpg", categoria: "Plano Piso 12 (7.1)", esPlano: true },
+  { src: "assets/images/planos/piso-12-7-2-plano.jpg", categoria: "Plano Piso 12 (7.2)", esPlano: true }
 ];
 
 /* -------------------------------------------------------------------------

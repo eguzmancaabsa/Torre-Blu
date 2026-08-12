@@ -287,7 +287,7 @@ let lightboxIndex = 0;
   galleryImages = galleryData;
 
   grid.innerHTML = galleryData.map((item, i) => `
-    <div class="gallery-item" data-index="${i}">
+    <div class="gallery-item${item.esPlano ? " gallery-item--plan" : ""}" data-index="${i}">
       <img src="${item.src}" alt="Torre Blu — ${item.categoria}"
            onerror="handleImgFallback(this, '${item.categoria}')" loading="lazy">
       <span class="gallery-tag">${item.categoria}</span>

@@ -579,6 +579,9 @@ button { font-family: inherit; cursor: pointer; }
 }
 .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
 .gallery-item:hover img { transform: scale(1.08); }
+.gallery-item--plan { background: var(--c-white); }
+.gallery-item--plan img { object-fit: contain; }
+.gallery-item--plan:hover img { transform: none; }
 .gallery-item .gallery-tag {
   position: absolute; left: 12px; bottom: 12px;
   color: var(--c-white);
