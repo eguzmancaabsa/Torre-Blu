@@ -83,9 +83,10 @@ const officesData = [
       "assets/images/oficinas/piso-9-07.jpg",
       "assets/images/oficinas/piso-9-08.jpg",
       "assets/images/oficinas/piso-9-09.jpg",
-      "assets/images/oficinas/piso-9-10.jpg"
+      "assets/images/oficinas/piso-9-10.jpg",
+      "assets/images/planos/piso-9-11-13-plano.jpg"
     ],
-    plano: "assets/images/planos/piso-9-plano.jpg", // TODO: cargar plano real
+    plano: "assets/images/planos/piso-9-11-13-plano.jpg",
     destacada: false
   },
   {
@@ -105,9 +106,10 @@ const officesData = [
       "assets/images/oficinas/piso-11-07.jpg",
       "assets/images/oficinas/piso-11-08.jpg",
       "assets/images/oficinas/piso-11-09.jpg",
-      "assets/images/oficinas/piso-11-10.jpg"
+      "assets/images/oficinas/piso-11-10.jpg",
+      "assets/images/planos/piso-9-11-13-plano.jpg"
     ],
-    plano: "assets/images/planos/piso-11-plano.jpg", // TODO: cargar plano real
+    plano: "assets/images/planos/piso-9-11-13-plano.jpg",
     destacada: false
   },
   {
@@ -160,9 +162,10 @@ const officesData = [
       "assets/images/oficinas/piso-13-06.jpg",
       "assets/images/oficinas/piso-13-07.jpg",
       "assets/images/oficinas/piso-13-08.jpg",
-      "assets/images/oficinas/piso-13-09.jpg"
+      "assets/images/oficinas/piso-13-09.jpg",
+      "assets/images/planos/piso-9-11-13-plano.jpg"
     ],
-    plano: "assets/images/planos/piso-13-plano.jpg", // TODO: cargar plano real
+    plano: "assets/images/planos/piso-9-11-13-plano.jpg",
     destacada: false
   },
   {
