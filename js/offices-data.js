@@ -30,11 +30,6 @@ const amenitiesData = [
 /* -------------------------------------------------------------------------
    OFICINAS DISPONIBLES
    -------------------------------------------------------------------------
-   ⚠️ Los registros marcados como EJEMPLO abajo usan datos de muestra para
-   ilustrar el diseño de la tarjeta. Sustitúyelos por la información real
-   de cada oficina (piso, superficie, estado, fotos y plano) antes de
-   publicar el sitio.
-
    Campos:
    - id            : identificador único (texto o número), sin espacios.
    - piso          : piso del edificio, ej. "Piso 8".
@@ -185,19 +180,6 @@ const officesData = [
       "assets/images/oficinas/piso-14-06.jpg"
     ],
     plano: "assets/images/planos/piso-14-plano.jpg", // TODO: cargar plano real
-    destacada: false
-  },
-  {
-    id: "ejemplo-03",
-    piso: "Piso 15 (EJEMPLO)",
-    superficie: 95,
-    precioM2: 22,
-    estado: "Acondicionada con muebles",
-    caracteristicas: ["Oficina privada", "Sala de espera", "Cocineta"],
-    fotos: [
-      "assets/images/oficinas/ejemplo-03-a.jpg"
-    ],
-    plano: "assets/images/planos/ejemplo-03-plano.jpg",
     destacada: false
   }
 ];
