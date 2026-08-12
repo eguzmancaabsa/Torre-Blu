@@ -295,6 +295,26 @@ button { font-family: inherit; cursor: pointer; }
   font-size: clamp(2rem, 4vw, 2.9rem);
   margin-bottom: 22px;
 }
+
+.torre-highlight {
+  margin-top: 28px;
+  padding: 28px 32px;
+  background: var(--c-off-white);
+  border-left: 3px solid var(--c-accent);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.torre-highlight h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+.torre-highlight p {
+  font-size: 0.98rem;
+  color: var(--c-gray-700);
+  line-height: 1.7;
+}
 .section-lead {
   font-size: 1.08rem;
   color: var(--c-gray-700);
