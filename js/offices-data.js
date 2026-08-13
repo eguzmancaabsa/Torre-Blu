@@ -150,7 +150,7 @@ const officesData = [
   },
   {
     id: "piso-13",
-    piso: "Piso 13",
+    piso: "Piso 14",
     superficie: 1248,
     precioM2: 22,
     estado: "Acondicionada sin muebles",
@@ -172,7 +172,7 @@ const officesData = [
   },
   {
     id: "piso-14",
-    piso: "Piso 14 (Con terraza)",
+    piso: "Piso 15 (Con terraza)",
     superficie: 1248,
     precioM2: 22,
     estado: "Acondicionada con muebles",
