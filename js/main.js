@@ -358,15 +358,16 @@ document.addEventListener("keydown", (e) => {
 /* -------------------------------------------------------------------------
    Formulario de contacto
    -------------------------------------------------------------------------
-   El formulario valida los campos en el cliente y está listo para
-   conectarse a un backend o servicio de formularios (p. ej. Formspree,
-   un endpoint propio, etc.). Sustituye el bloque marcado abajo por el
-   envío real (fetch a tu API) cuando tengas el endpoint definido.
+   El formulario valida los campos en el cliente y envía las solicitudes
+   por Formspree (https://formspree.io/f/mrpzrygd) al correo configurado
+   ahí. Para cambiar el destino, actualiza el endpoint en Formspree o
+   reemplaza la URL de abajo por otro servicio/endpoint propio.
    ------------------------------------------------------------------------- */
 (function initContactForm() {
   const form = document.getElementById("contactForm");
   if (!form) return;
   const note = document.getElementById("formNote");
+  const submitBtn = form.querySelector('button[type="submit"]');
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -387,22 +388,28 @@ document.addEventListener("keydown", (e) => {
       return;
     }
 
-    const data = Object.fromEntries(new FormData(form).entries());
+    submitBtn.disabled = true;
 
-    /* ---- Punto de integración con backend / servicio de formularios ----
-       Ejemplo con Formspree:
+    try {
+      const response = await fetch("https://formspree.io/f/mrpzrygd", {
+        method: "POST",
+        headers: { "Accept": "application/json" },
+        body: new FormData(form)
+      });
 
-       await fetch("https://formspree.io/f/TU_ID", {
-         method: "POST",
-         headers: { "Accept": "application/json" },
-         body: new FormData(form)
-       });
-    ------------------------------------------------------------------- */
-
-    console.log("Solicitud de información — Torre Blu:", data);
-
-    note.textContent = "¡Gracias! Hemos recibido tu solicitud, un asesor te contactará muy pronto.";
-    note.classList.add("success");
-    form.reset();
+      if (response.ok) {
+        note.textContent = "¡Gracias! Hemos recibido tu solicitud, un asesor te contactará muy pronto.";
+        note.classList.add("success");
+        form.reset();
+      } else {
+        note.textContent = "Hubo un problema al enviar tu solicitud. Intenta de nuevo o escríbenos por WhatsApp.";
+        note.classList.add("error");
+      }
+    } catch {
+      note.textContent = "Hubo un problema al enviar tu solicitud. Intenta de nuevo o escríbenos por WhatsApp.";
+      note.classList.add("error");
+    } finally {
+      submitBtn.disabled = false;
+    }
   });
 })();
