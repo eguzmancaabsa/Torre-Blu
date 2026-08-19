@@ -389,16 +389,17 @@ document.addEventListener("keydown", (e) => {
 
     const data = Object.fromEntries(new FormData(form).entries());
 
-    /* ---- Punto de integración con backend / servicio de formularios ----
-       Ejemplo con Formspree:
+const response = await fetch("https://formspree.io/f/mrpzrygd", {
+  method: "POST",
+  headers: { "Accept": "application/json" },
+  body: new FormData(form)
+});
 
-       await fetch("https://formspree.io/f/TU_ID", {
-         method: "POST",
-         headers: { "Accept": "application/json" },
-         body: new FormData(form)
-       });
-    ------------------------------------------------------------------- */
-
+if (!response.ok) {
+  note.textContent = "No se pudo enviar la solicitud. Intenta nuevamente.";
+  note.classList.add("error");
+  return;
+}
     console.log("Solicitud de información — Torre Blu:", data);
 
     note.textContent = "¡Gracias! Hemos recibido tu solicitud, un asesor te contactará muy pronto.";
